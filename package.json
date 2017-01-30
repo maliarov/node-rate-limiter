@@ -1,0 +1,17 @@
+{
+  "name": "node-rate-limiter",
+  "version": "1.0.0",
+  "description": "Rate limiter for Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "limit",
+    "limiter",
+    "ratelimit",
+    "rate"
+  ],
+  "author": "mujichOk",
+  "license": "MIT"
+}
