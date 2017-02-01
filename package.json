@@ -11,5 +11,9 @@
     "rate"
   ],
   "author": "mujichOk",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mujichOk/node-rate-limiter.git"
+  },
   "license": "MIT"
 }
