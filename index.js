@@ -1,5 +1,4 @@
 const util = require('util');
-const once = require('once');
 
 module.exports = NodeRateLimiter;
 

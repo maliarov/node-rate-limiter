@@ -15,6 +15,5 @@
   "author": "mujichOk",
   "license": "MIT",
   "dependencies": {
-    "once": "^1.4.0"
   }
 }
