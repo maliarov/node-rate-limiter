@@ -1,7 +1,7 @@
 {
   "name": "node-rate-limiter",
   "version": "0.1.0",
-  "description": "Rate limiter for Node.js",
+  "description": "Rate limiter",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
