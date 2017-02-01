@@ -11,13 +11,8 @@ NodeRateLimiter.TimeoutError = TimeoutError;
 util.inherits(TimeoutError, Error);
 
 
-function NodeRateLimiter(opts) {
-    opts = opts || {};
-    
-    const adaptor = opts.adaptor || new InMemoryAdaptor();
-    if (!adaptor) {
-        throw new Error('adaptor not defined');
-    }
+function NodeRateLimiter(adaptor) {
+    adaptor = adaptor || new InMemoryAdaptor();
 
     let isPrepared = typeof adaptor.prepare !== 'function';
 
