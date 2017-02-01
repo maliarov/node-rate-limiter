@@ -59,8 +59,8 @@ function InMemoryAdaptor() {
     };
 
     this.get = (id, opts, callback) => {
-        const meta = map[id];
         const date = +new Date();
+        let meta = map[id];
 
         if (meta && meta.expire <= date) {
             meta = null;
