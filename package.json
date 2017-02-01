@@ -1,6 +1,6 @@
 {
   "name": "node-rate-limiter",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Rate limiter for Node.js",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,5 @@
     "rate"
   ],
   "author": "mujichOk",
-  "license": "MIT",
-  "dependencies": {
-  }
+  "license": "MIT"
 }
