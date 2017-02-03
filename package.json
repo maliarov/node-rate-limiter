@@ -1,11 +1,9 @@
 {
   "name": "node-rate-limiter",
-  "version": "0.0.1",
-  "description": "Rate limiter for Node.js",
+  "version": "0.1.0",
+  "description": "Rate limiter",
   "main": "index.js",
-  "scripts": {
-    "test": "mocha"
-  },
+  "scripts": {},
   "keywords": [
     "limit",
     "limiter",
@@ -19,5 +17,9 @@
     "@debitoor/eslint-config-debitoor": "^1.2.0",
     "mocha": "^3.2.0",
     "mocha-eslint": "^3.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mujichOk/node-rate-limiter.git"
   }
 }
