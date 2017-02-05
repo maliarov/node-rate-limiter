@@ -6,6 +6,7 @@ module.exports = NodeRateLimiter;
 
 NodeRateLimiter.defaults = utils.defaults;
 NodeRateLimiter.TimeoutError = utils.TimeoutError;
+NodeRateLimiter.RateLimitError = utils.RateLimitError;
 
 function NodeRateLimiter(adaptor) {
 	assert(this instanceof NodeRateLimiter, 'NodeRateLimiter should be created with new keyword: new NodeRateLimiter(...)');

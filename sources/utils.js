@@ -8,12 +8,14 @@ const defaults = {
 };
 
 util.inherits(TimeoutError, Error);
+util.inherits(RateLimitError, Error);
 
 module.exports = {
 	defaults,
 	normalizeOptionsForGet,
 	noop,
-	TimeoutError
+	TimeoutError,
+	RateLimitError
 };
 
 
@@ -23,6 +25,23 @@ function TimeoutError(message, extra) {
 	this.name = this.constructor.name;
 	this.message = message;
 	this.extra = extra;
+}
+
+function RateLimitError(message, limit) {
+	if (limit == null && typeof message === 'object') {
+		limit = message;
+		message = null;
+	}
+
+	Error.captureStackTrace(this, this.constructor);
+
+	assert(limit && limit.limit !== undefined && limit.refresh !== undefined, 'limit must be {limit: N, refresh: M}');
+
+	message = message || `Maximum call limit (${limit.limit}) exceeded, you can re-try in ${limit.refresh} ms`;
+
+	this.name = this.constructor.name;
+	this.message = message;
+	this.limit = limit;
 }
 
 

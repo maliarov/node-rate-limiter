@@ -2,15 +2,9 @@
 
   Simple calls rate limiter for [Node.js®](https://nodejs.org), inspired by [@tj](https://github.com/tj)'s [node-ratelimiter](https://github.com/tj/node-ratelimiter)
  
- 
   Package contains **NodeRateLimiter** that uses different adaptors for store rate's data to varios stores.<br/> 
   By default **NodeRateLimiter** supports local process memory, but you can also use following adaptors:
    - **[node-rate-limiter-redis](https://github.com/mujichOk/node-rate-limiter-redis)** - adaptor for [Redis](https://redis.io) database 
-   - ...
-
-
-
-
 
 # Usage
 
@@ -50,7 +44,7 @@ function someInternalSystemModuleMethod(clientId, arg1, /*...*/ argN, callback) 
       }
 
       if (!limit.remaining) {
-        return callback(new Error(`max call limit (${limit.total}) exceeded, you can re-try in ${limit.refresh} ms`));
+        return callback(new NodeRateLimiter.RateLimitError(limit));
       }
 
       someInternalSystemModule.someMethod(arg1, /*...*/ argN, callback);
@@ -98,11 +92,11 @@ function RequestRateLimitMiddleware(req, res, next) {
 }
 ```
 
-If method call least too long, then callback will fires with Timeout error 
+If method call least too long, then callback will fires with Timeout error.
 
 ```js
   nodeRateLimiter.get(someId, (err, limit) => {
-    if (err instanceof NodeRateLimiter.TimeoutError) {
+    if (err && err.name = 'TimeoutError') {
       /* handle timeout error */
       return;
     }
@@ -110,9 +104,6 @@ If method call least too long, then callback will fires with Timeout error
     /* ... */
   });
 ```
-
-
-
 
 # License
 
