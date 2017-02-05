@@ -6,6 +6,11 @@
   By default **NodeRateLimiter** supports local process memory, but you can also use following adaptors:
    - **[node-rate-limiter-redis](https://github.com/mujichOk/node-rate-limiter-redis)** - adaptor for [Redis](https://redis.io) database 
 
+# Install 
+```
+npm install node-rate-limiter
+```
+
 # Usage
 
 You can find default values under **NodeRateLimiter** namespace 
