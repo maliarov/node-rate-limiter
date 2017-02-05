@@ -23,7 +23,7 @@ describe('InMemoryAdaptor', () => {
 		const state = {};
 		const adaptor = new InMemoryAdaptor(state);
 		const opts = { limit: 10, expire: 1000 };
-		const date = +new Date();
+		let refresh = opts.expire;
 
 		before(done =>
 			adaptor.reset(id, done)
@@ -35,7 +35,10 @@ describe('InMemoryAdaptor', () => {
 					expect(limit).to.be.ok;
 					expect(limit).to.have.property('limit', 10);
 					expect(limit).to.have.property('remaining', v);
-					expect(limit).to.have.property('refresh').to.be.at.least(+new Date() - date);
+					expect(limit).to.have.property('refresh').to.be.most(opts.expire);
+					expect(limit.refresh).to.be.most(refresh);
+
+					refresh = limit.refresh;
 					done();
 				});
 			});
@@ -45,12 +48,11 @@ describe('InMemoryAdaptor', () => {
 			this.timeout(opts.expire * 2);
 
 			setTimeout(() => {
-				const date = +new Date();
 				adaptor.get(id, opts, (err, limit) => {
 					expect(limit).to.be.ok;
 					expect(limit).to.have.property('limit', 10);
 					expect(limit).to.have.property('remaining', 9);
-					expect(limit).to.have.property('refresh').to.be.at.least(+new Date() - date);
+					expect(limit).to.have.property('refresh').to.be.eq(opts.expire);
 					done();
 				});
 			}, opts.expire * 1.1);

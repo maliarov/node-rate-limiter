@@ -4,6 +4,7 @@ module.exports = {
 		mocha: true
 	},
 	globals: {
+		assert: true,
 		expect: true,
 		sinon: true
 	}

@@ -1,3 +1,4 @@
+const assert = require('assert');
 const utils = require('./utils');
 const InMemoryAdaptor = require('./in-memory-adaptor');
 

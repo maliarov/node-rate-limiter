@@ -1,3 +1,4 @@
+const assert = require('assert');
 const util = require('util');
 
 const defaults = {
