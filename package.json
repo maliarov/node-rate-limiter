@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "Rate limiter",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "mocha"
+  },
   "keywords": [
     "limit",
     "limiter",
@@ -14,9 +16,12 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "@debitoor/eslint-config-debitoor": "^1.2.0",
-    "mocha": "^3.2.0",
-    "mocha-eslint": "^3.0.1"
+    "@debitoor/eslint-config-debitoor": "1.2.0",
+    "chai": "3.5.0",
+    "mocha": "3.2.0",
+    "mocha-eslint": "3.0.1",
+    "sinon": "1.17.7",
+    "sinon-chai": "2.8.0"
   },
   "repository": {
     "type": "git",

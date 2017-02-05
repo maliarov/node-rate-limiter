@@ -1,3 +1,6 @@
 module.exports = {
-	'extends': '@debitoor/eslint-config-debitoor'
+	extends: '@debitoor/eslint-config-debitoor',
+	globals: {
+		assert: true
+	}
 };
