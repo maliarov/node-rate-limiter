@@ -26,7 +26,7 @@ function InMemoryAdaptor(stateMap) {
 		if (!meta) {
 			meta = {
 				total: 0,
-				limit: opts.limit,
+				limit: opts.limit + 1,
 				expire: date + opts.expire
 			};
 
@@ -42,7 +42,7 @@ function InMemoryAdaptor(stateMap) {
 		}
 
 		const result = {
-			limit: meta.limit,
+			limit: meta.limit - 1,
 			remaining: meta.limit - meta.total,
 			refresh: meta.expire - date
 		};

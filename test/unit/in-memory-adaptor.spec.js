@@ -29,7 +29,7 @@ describe('InMemoryAdaptor', () => {
 			adaptor.reset(id, done)
 		);
 
-		[9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0, 0].forEach((v, i) => {
+		[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0].forEach((v, i) => {
 			it('should return valid limit\'s info on call #' + (i + 1), (done) => {
 				adaptor.get(id, opts, (err, limit) => {
 					expect(limit).to.be.ok;
@@ -51,7 +51,7 @@ describe('InMemoryAdaptor', () => {
 				adaptor.get(id, opts, (err, limit) => {
 					expect(limit).to.be.ok;
 					expect(limit).to.have.property('limit', 10);
-					expect(limit).to.have.property('remaining', 9);
+					expect(limit).to.have.property('remaining', 10);
 					expect(limit).to.have.property('refresh').to.be.eq(opts.expire);
 					done();
 				});
