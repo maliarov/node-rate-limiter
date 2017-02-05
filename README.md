@@ -8,7 +8,7 @@
 
 # Usage
 
-You can find default values under NodeRateLimiter namespace 
+You can find default values under **NodeRateLimiter** namespace 
 
 ```js
   NodeRateLimiter.defaults = {
@@ -22,7 +22,7 @@ You can use default in memory store of current process just providing empty adap
 
 ```js
 const NodeRateLimiter = require('node-rate-limiter');
-const nodeRateLimiter = new nodeRateLimiter();
+const nodeRateLimiter = new NodeRateLimiter();
 ```
 
 Or You can use one of the existing providers 
