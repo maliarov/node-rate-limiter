@@ -1,5 +1,5 @@
 require('mocha-eslint')([
 	'*.js',
-	'sources',
+	'source',
 	'test'
 ]);
