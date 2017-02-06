@@ -1,4 +1,4 @@
-const InMemoryAdaptor = require('../../sources/in-memory-adaptor');
+const InMemoryAdaptor = require('../../source/in-memory-adaptor');
 
 describe('InMemoryAdaptor', () => {
 	const id = 'client.1';

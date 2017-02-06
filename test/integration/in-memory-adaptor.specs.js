@@ -1,5 +1,5 @@
 const async = require('async');
-const NodeRateLimiter = require('../../sources/node-rate-limiter');
+const NodeRateLimiter = require('../../source/node-rate-limiter');
 
 describe('wrap method call', () => {
 	const clientId = 'test.1';

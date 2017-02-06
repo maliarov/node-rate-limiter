@@ -1,6 +1,6 @@
-const utils = require('../../sources/utils');
-const InMemoryAdaptor = require('../../sources/in-memory-adaptor');
-const NodeRateLimiter = require('../../sources/node-rate-limiter');
+const utils = require('../../source/utils');
+const InMemoryAdaptor = require('../../source/in-memory-adaptor');
+const NodeRateLimiter = require('../../source/node-rate-limiter');
 
 describe('NodeRateLimiter', () => {
 	it('should be class instance', () =>

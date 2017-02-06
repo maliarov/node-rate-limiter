@@ -1,4 +1,4 @@
-const utils = require('../../sources/utils');
+const utils = require('../../source/utils');
 
 describe('utils', () => {
 	describe('normalizeOptionsForGet(opts)', () => {
