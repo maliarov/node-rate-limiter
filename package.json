@@ -1,6 +1,6 @@
 {
   "name": "node-rate-limiter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Rate limiter",
   "main": "source/node-rate-limiter.js",
   "scripts": {
