@@ -4,6 +4,7 @@ const InMemoryAdaptor = require('./in-memory-adaptor');
 
 module.exports = NodeRateLimiter;
 
+
 NodeRateLimiter.defaults = utils.defaults;
 NodeRateLimiter.TimeoutError = utils.TimeoutError;
 NodeRateLimiter.RateLimitError = utils.RateLimitError;
@@ -18,17 +19,22 @@ function NodeRateLimiter(adaptor) {
 
 	let isPrepared = typeof adaptor.prepare !== 'function';
 
-	this.reset = (id, callback) => {
+	this.reset = reset;
+	this.get = get;
+	this.getAdaptorName = getAdaptorName;
+
+
+	function reset(id, callback) {
 		assert(id != null, 'id argument must be provided: reset(id, ...)');
 
 		id = id.toString();
 
-		return prepare(callback || utils.noop, cb =>
+		return prepare(callback || utils.noop, (cb) =>
 			adaptor.reset(id, cb)
 		);
-	};
+	}
 
-	this.get = (id, opts, callback) => {
+	function get(id, opts, callback) {
 		assert(id != null, 'id argument must be provided: get(id, ...)');
 
 		id = id.toString();
@@ -37,13 +43,15 @@ function NodeRateLimiter(adaptor) {
 			callback = opts;
 			opts = null;
 		}
-		
-		return prepare(callback || utils.noop, cb =>
+
+		return prepare(callback || utils.noop, (cb) =>
 			adaptor.get(id, utils.normalizeOptionsForGet(opts), cb)
 		);
-	};
+	}
 
-	this.getAdaptorName = () => adaptor.name;
+	function getAdaptorName() {
+		return adaptor.name;
+	}
 
 	function prepare(callback, next) {
 		if (isPrepared) {

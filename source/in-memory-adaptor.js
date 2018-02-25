@@ -14,7 +14,7 @@ function InMemoryAdaptor(stateMap) {
 		callback();
 	};
 
-	this.get = (id, opts, callback) => {
+	this.get = (id, {limit, expire} = {}, callback) => {
 		const date = +new Date();
 		let meta = state[id];
 
@@ -26,11 +26,11 @@ function InMemoryAdaptor(stateMap) {
 		if (!meta) {
 			meta = {
 				total: 0,
-				limit: opts.limit + 1,
-				expire: date + opts.expire
+				limit: limit + 1,
+				expire: date + expire
 			};
 
-			if (opts.limit && opts.expire) {
+			if (limit && expire) {
 				state[id] = meta;
 			}
 		}

@@ -1,6 +1,6 @@
 {
   "name": "node-rate-limiter",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Rate limiter",
   "main": "source/node-rate-limiter.js",
   "scripts": {
@@ -16,7 +16,7 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "@debitoor/eslint-config-debitoor": "1.2.0",
+    "@debitoor/eslint-config-debitoor": "2.1.0",
     "async": "2.1.4",
     "chai": "3.5.0",
     "mocha": "3.2.0",
